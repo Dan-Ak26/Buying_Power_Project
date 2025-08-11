@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.20)
+project(buying_power)
+
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+add_executable(buypower
+    main.cpp
+    App.cpp
+    CsvTable.cpp
+    BuyingPowerTransformer.cpp
+)
+
+
+target_include_directories(buying_power PUBLIC .)
+
+
+if (MSVC)
+    target_compile_options(buying_power PRIVATE /EHsc /bigobj)
+endif()
